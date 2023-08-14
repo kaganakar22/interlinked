@@ -1,5 +1,5 @@
 # interlinked
-To compile the main.cpp, go to src
+To run, go to src
 ```
 make run
 ```
