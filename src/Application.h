@@ -5,8 +5,10 @@ namespace Interlinked{
     {
     public:
         Application();
-        virtual ~Application();
+        ~Application();
 
         void Run();
     };
+
+    Application* CreateApplication();
 }

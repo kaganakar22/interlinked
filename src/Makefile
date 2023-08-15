@@ -4,19 +4,19 @@ WXFLAGS = $(shell wx-config --cxxflags)
 WXLINK = $(shell wx-config --libs)
 
 
-all: my_program
+all: interlinked
 
-my_program: main.o test.o
-	$(CC) $(CFLAGS) main.o test.o -o my_program
+interlinked: main.o Application.o 
+	$(CC) $(CFLAGS) main.o Application.o -o interlinked
 
-run: my_program
-	./my_program
+run: interlinked
+	./interlinked
 
-main.o: main.cpp test.h
+main.o: main.cpp Application.h
 	$(CC) $(CFLAGS) -c main.cpp -o main.o
 
-test.o: test.cpp test.h
-	$(CC) $(CFLAGS) -c test.cpp -o test.o
+test.o: Application.cpp Application.h
+	$(CC) $(CFLAGS) -c Application.cpp -o Application.o
 
 clean:
-	rm -f *.o my_program
+	rm -f *.o interlinked
