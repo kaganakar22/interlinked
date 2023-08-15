@@ -1,14 +1,14 @@
 #include "../src/Interlinked.h"
 
-class system : public Interlinked::Application
+class xena : public Interlinked::Application
 {
 public:
-    system()
+    xena()
     {
 
     }
 
-    ~system()
+    ~xena()
     {
 
     }
@@ -17,5 +17,5 @@ public:
 
 Interlinked::Application* Interlinked::CreateApplication()
 {
-    return new system();
+    return new xena();
 }
