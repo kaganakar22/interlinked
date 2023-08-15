@@ -1,7 +1,8 @@
-#include <Interlinked.h>
+#include "../src/Interlinked.h"
 
 class system : public Interlinked::Application
 {
+public:
     system()
     {
 

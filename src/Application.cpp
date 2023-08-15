@@ -1,5 +1,7 @@
 #include "Application.h"
 #include "Core.h"
+#include <stdio.h>
+
 
 namespace Interlinked{
     Application::Application()
@@ -14,6 +16,7 @@ namespace Interlinked{
 
     void Application::Run()
     {
-        while(true);
+
+        
     }
 }
