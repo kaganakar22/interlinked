@@ -9,8 +9,8 @@ extern Interlinked:: Application* Interlinked::CreateApplication();
 int main(int argc, char** argv)
 {
     Interlinked::Log::Init();
-    Interlinked::Log::GetCoreLogger()->warn("Initialization Completed!");
-    Interlinked::Log::GetClientLogger()->info("Hello There!");
+    INT_CORE_WARN("Initialization Completed!");
+    INT_INFO("Hello There!");
 
     auto app = Interlinked::CreateApplication();
     app->Run();
