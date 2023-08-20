@@ -1,22 +1,21 @@
-CC = clang
-CFLAGS = -Wall -Wextra 
-WXFLAGS = $(shell wx-config --cxxflags)
-WXLINK = $(shell wx-config --libs)
+# Makefile for compiling and running ClientApp
 
+CXX = g++
+CXXFLAGS = -std=c++11
+SRC_DIR = ../src
+INC_DIR = ../vendor/spdlog/include
+SRC_FILES = ClientApp.cpp $(SRC_DIR)/Application.cpp $(SRC_DIR)/Log.cpp
+OUT_DIR = bin
+OUT = $(OUT_DIR)/ClientApp
 
-all: interlinked
+all: $(OUT)
+	./$(OUT)
 
-interlinked: main.o Application.o 
-	$(CC) $(CFLAGS) main.o Application.o -o interlinked
-
-run: interlinked
-	./interlinked
-
-main.o: main.cpp Application.h
-	$(CC) $(CFLAGS) -c main.cpp -o main.o
-
-test.o: Application.cpp Application.h
-	$(CC) $(CFLAGS) -c Application.cpp -o Application.o
+$(OUT): $(SRC_FILES)
+	mkdir -p $(OUT_DIR)
+	$(CXX) $(CXXFLAGS) -o $(OUT) $(SRC_FILES) -I$(INC_DIR)
 
 clean:
-	rm -f *.o interlinked
+	rm -rf $(OUT_DIR)
+
+.PHONY: all clean
