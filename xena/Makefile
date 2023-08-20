@@ -11,6 +11,10 @@ OUT = $(OUT_DIR)/ClientApp
 all: $(OUT)
 	./$(OUT)
 
+macos: CXXFLAGS += -DIL_MAC
+macos: $(OUT)
+	./$(OUT)
+
 $(OUT): $(SRC_FILES)
 	mkdir -p $(OUT_DIR)
 	$(CXX) $(CXXFLAGS) -o $(OUT) $(SRC_FILES) -I$(INC_DIR)
@@ -18,4 +22,4 @@ $(OUT): $(SRC_FILES)
 clean:
 	rm -rf $(OUT_DIR)
 
-.PHONY: all clean
+.PHONY: all macos clean
