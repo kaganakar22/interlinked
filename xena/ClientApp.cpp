@@ -1,4 +1,4 @@
-#include "../src/Interlinked.h"
+#include "../interlinked/src/Interlinked.h"
 
 class xena : public Interlinked::Application
 {

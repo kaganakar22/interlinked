@@ -2,8 +2,8 @@
 
 CXX = g++
 CXXFLAGS = -std=c++11
-SRC_DIR = ../src
-INC_DIR = ../vendor/spdlog/include
+SRC_DIR = ../interlinked/src
+INC_DIR = ../interlinked/vendor/spdlog/include
 SRC_FILES = ClientApp.cpp $(SRC_DIR)/Application.cpp $(SRC_DIR)/Log.cpp
 OUT_DIR = bin
 OUT = $(OUT_DIR)/ClientApp
